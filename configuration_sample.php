@@ -4,13 +4,13 @@ return [
     'public_path' => APP_PUBLIC_PATH,
     'public_dir' => APP_PUBLIC_DIR,
     'overwrite_on_upload' => false,
-    'timezone' => 'UTC', // https://www.php.net/manual/en/timezones.php
+    'timezone' => 'America/Sao_Paulo', // https://www.php.net/manual/en/timezones.php
     'download_inline' => ['pdf'], // download inline in the browser, array of extensions, use * for all
 
     'frontend_config' => [
-        'app_name' => 'FileGator',
+        'app_name' => 'Gerenciador de Arquivos',
         'app_version' => APP_VERSION,
-        'language' => 'english',
+        'language' => 'portuguese',
         'logo' => 'https://filegator.io/filegator_logo.svg',
         'upload_max_size' => 100 * 1024 * 1024, // 100MB
         'upload_chunk_size' => 1 * 1024 * 1024, // 1MB
@@ -88,7 +88,7 @@ return [
                 'config' => [],
                 'adapter' => function () {
                     return new \League\Flysystem\Adapter\Local(
-                        __DIR__.'/repository'
+                        APP_MANAGER_PATH
                     );
                 },
             ],
